@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dajinhbc062f1"]
+
+[ext_resource type="PackedScene" uid="uid://gnh1d27ng0nj" path="res://scenes/ui/UtOption.tscn" id="1_oejoh"]
+[ext_resource type="Script" uid="uid://bf3c8vudsl8ab" path="res://scenes/ui/scripts/UtTextOption.gd" id="2_3b0ba"]
+[ext_resource type="FontFile" uid="uid://dn1j6buulfdtu" path="res://assets/font/8bitoperator_jve.ttf" id="2_s4aax"]
+
+[sub_resource type="FontVariation" id="FontVariation_sfasv"]
+base_font = ExtResource("2_s4aax")
+spacing_glyph = 2
+spacing_space = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_3b0ba"]
+font = SubResource("FontVariation_sfasv")
+font_size = 32
+
+[node name="UtTextOption" instance=ExtResource("1_oejoh")]
+script = ExtResource("2_3b0ba")
+optionText = ""
+playerOffset = 24
+
+[node name="text" type="Label" parent="." index="0"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = -16.0
+offset_right = 1.0
+offset_bottom = 16.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+label_settings = SubResource("LabelSettings_3b0ba")

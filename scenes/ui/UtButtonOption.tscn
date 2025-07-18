@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpb3e8bibjl8s"]
+
+[ext_resource type="PackedScene" uid="uid://gnh1d27ng0nj" path="res://scenes/ui/UtOption.tscn" id="1_hckha"]
+[ext_resource type="Script" uid="uid://dg5lobx3thahi" path="res://scenes/ui/scripts/UtButtonOption.gd" id="2_s2krd"]
+
+[node name="UtButtonOption" instance=ExtResource("1_hckha")]
+script = ExtResource("2_s2krd")
+
+[node name="selected" type="Sprite2D" parent="." index="0"]
+
+[node name="default" type="Sprite2D" parent="." index="1"]

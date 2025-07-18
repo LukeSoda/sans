@@ -1,0 +1,136 @@
+[gd_scene load_steps=15 format=3 uid="uid://c62xvrmi4p6lb"]
+
+[ext_resource type="PackedScene" uid="uid://b3ad44ttumb65" path="res://scenes/soul.tscn" id="1_537il"]
+[ext_resource type="PackedScene" uid="uid://bnlsc0lj1043o" path="res://scenes/ui/optionContainer.tscn" id="2_htrw1"]
+[ext_resource type="PackedScene" uid="uid://bpb3e8bibjl8s" path="res://scenes/ui/UtButtonOption.tscn" id="3_osnhv"]
+[ext_resource type="Texture2D" uid="uid://xhoem7wmocuu" path="res://assets/ui/buttons/fightToggle.png" id="4_qogor"]
+[ext_resource type="Texture2D" uid="uid://us238udkhv7x" path="res://assets/ui/buttons/fight.png" id="5_57w1i"]
+[ext_resource type="Texture2D" uid="uid://d0qrj7qqw7q6t" path="res://assets/ui/buttons/actToggle.png" id="6_d0pif"]
+[ext_resource type="Texture2D" uid="uid://7n7bsf7o5p5h" path="res://assets/ui/buttons/act.png" id="7_8lmvx"]
+[ext_resource type="Texture2D" uid="uid://bis2m3hd3gbd5" path="res://assets/ui/buttons/itemToggle.png" id="8_fxs7y"]
+[ext_resource type="Texture2D" uid="uid://dadfbkcp1j6ht" path="res://assets/ui/buttons/item.png" id="9_dhtev"]
+[ext_resource type="Texture2D" uid="uid://dylphaf18yh23" path="res://assets/ui/buttons/mercyToggle.png" id="10_rejdh"]
+[ext_resource type="Texture2D" uid="uid://d074xfmp08rom" path="res://assets/ui/buttons/mercy.png" id="11_cipto"]
+[ext_resource type="PackedScene" uid="uid://dajinhbc062f1" path="res://scenes/ui/UtTextOption.tscn" id="12_8lmvx"]
+[ext_resource type="PackedScene" uid="uid://dvipww0h6o6y1" path="res://scenes/ui/optionHandler.tscn" id="13_dhtev"]
+[ext_resource type="Script" uid="uid://dxyq5qga5jd2h" path="res://scenes/ui/scripts/optionHandler.gd" id="14_rejdh"]
+
+[node name="sansArena" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_537il")]
+z_index = 1
+position = Vector2(257, 196)
+
+[node name="optionHandler" parent="." instance=ExtResource("13_dhtev")]
+script = ExtResource("14_rejdh")
+
+[node name="buttonUI" parent="." node_paths=PackedStringArray("player", "inFocus") instance=ExtResource("2_htrw1")]
+player = NodePath("../player")
+inFocus = NodePath("fight")
+containerID = "bottom"
+
+[node name="fight" parent="buttonUI" node_paths=PackedStringArray("leftNeighbor", "rightNeighbor") instance=ExtResource("3_osnhv")]
+position = Vector2(95, 445)
+scale = Vector2(1.00343, 1)
+playerOffset = 39
+leftNeighbor = NodePath("../mercy")
+rightNeighbor = NodePath("../act")
+optionID = "fight"
+
+[node name="selected" parent="buttonUI/fight" index="0"]
+texture = ExtResource("4_qogor")
+
+[node name="default" parent="buttonUI/fight" index="1"]
+texture = ExtResource("5_57w1i")
+
+[node name="act" parent="buttonUI" node_paths=PackedStringArray("leftNeighbor", "rightNeighbor") instance=ExtResource("3_osnhv")]
+position = Vector2(239, 448)
+playerOffset = 39
+leftNeighbor = NodePath("../fight")
+rightNeighbor = NodePath("../item")
+optionID = "act"
+
+[node name="selected" parent="buttonUI/act" index="0"]
+texture = ExtResource("6_d0pif")
+
+[node name="default" parent="buttonUI/act" index="1"]
+texture = ExtResource("7_8lmvx")
+
+[node name="item" parent="buttonUI" node_paths=PackedStringArray("leftNeighbor", "rightNeighbor") instance=ExtResource("3_osnhv")]
+position = Vector2(391, 446)
+playerOffset = 39
+leftNeighbor = NodePath("../act")
+rightNeighbor = NodePath("../mercy")
+optionID = "item"
+
+[node name="selected" parent="buttonUI/item" index="0"]
+texture = ExtResource("8_fxs7y")
+
+[node name="default" parent="buttonUI/item" index="1"]
+texture = ExtResource("9_dhtev")
+
+[node name="mercy" parent="buttonUI" node_paths=PackedStringArray("leftNeighbor", "rightNeighbor") instance=ExtResource("3_osnhv")]
+position = Vector2(542, 447)
+playerOffset = 39
+leftNeighbor = NodePath("../item")
+rightNeighbor = NodePath("../fight")
+optionID = "mercy"
+
+[node name="selected" parent="buttonUI/mercy" index="0"]
+texture = ExtResource("10_rejdh")
+
+[node name="default" parent="buttonUI/mercy" index="1"]
+texture = ExtResource("11_cipto")
+
+[node name="textOptions" parent="." node_paths=PackedStringArray("player", "inFocus") instance=ExtResource("2_htrw1")]
+player = NodePath("../player")
+inFocus = NodePath("lhero")
+containerID = "items"
+
+[node name="lhero" parent="textOptions" node_paths=PackedStringArray("topNeighbor", "bottomNeighbor") instance=ExtResource("12_8lmvx")]
+position = Vector2(119, 114)
+optionText = "* L. Hero"
+topNeighbor = NodePath("../pie")
+bottomNeighbor = NodePath("../facesteak")
+optionID = "lhero"
+
+[node name="facesteak" parent="textOptions" node_paths=PackedStringArray("topNeighbor", "bottomNeighbor") instance=ExtResource("12_8lmvx")]
+position = Vector2(121, 146)
+optionText = "* Steak"
+topNeighbor = NodePath("../lhero")
+bottomNeighbor = NodePath("../inoodles")
+optionID = "steak"
+
+[node name="inoodles" parent="textOptions" node_paths=PackedStringArray("topNeighbor", "bottomNeighbor") instance=ExtResource("12_8lmvx")]
+position = Vector2(123, 175)
+optionText = "* I. Noodles"
+topNeighbor = NodePath("../facesteak")
+bottomNeighbor = NodePath("../pie")
+optionID = "noodles"
+
+[node name="pie" parent="textOptions" node_paths=PackedStringArray("topNeighbor", "bottomNeighbor") instance=ExtResource("12_8lmvx")]
+position = Vector2(123, 206)
+optionText = "* Pie"
+topNeighbor = NodePath("../inoodles")
+bottomNeighbor = NodePath("../lhero")
+optionID = "pie"
+
+[connection signal="changeContainer" from="optionHandler" to="buttonUI" method="grabContainerFocus"]
+[connection signal="changeContainer" from="optionHandler" to="textOptions" method="grabContainerFocus"]
+[connection signal="choose" from="buttonUI/fight" to="optionHandler" method="bottomOptionPicked"]
+[connection signal="choose" from="buttonUI/act" to="optionHandler" method="bottomOptionPicked"]
+[connection signal="choose" from="buttonUI/item" to="optionHandler" method="bottomOptionPicked"]
+[connection signal="choose" from="buttonUI/mercy" to="optionHandler" method="bottomOptionPicked"]
+[connection signal="choose" from="textOptions/lhero" to="optionHandler" method="itemOptionPicked"]
+[connection signal="choose" from="textOptions/facesteak" to="optionHandler" method="itemOptionPicked"]
+[connection signal="choose" from="textOptions/inoodles" to="optionHandler" method="itemOptionPicked"]
+[connection signal="choose" from="textOptions/pie" to="optionHandler" method="itemOptionPicked"]
+
+[editable path="buttonUI/fight"]
+[editable path="buttonUI/act"]
+[editable path="buttonUI/item"]
+[editable path="buttonUI/mercy"]
+[editable path="textOptions/lhero"]
+[editable path="textOptions/facesteak"]
+[editable path="textOptions/inoodles"]
+[editable path="textOptions/pie"]
