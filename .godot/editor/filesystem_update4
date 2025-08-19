@@ -1,10 +1,9 @@
+res://scenes/attacks/attackPieces/bone.tscn
+res://scenes/attacks/attackPieces/scripts/bone.gd
 res://scenes/fight.tscn
-res://objects/queue.gd
 res://scenes/soul.tscn
 res://scenes/ui/UtOption.tscn
 res://scenes/ui/UtButtonOption.tscn
 res://scenes/ui/optionContainer.tscn
 res://scenes/ui/optionHandler.tscn
-res://scenes/soul.gd
-res://scenes/attacks/attackPieces/bone.tscn
 res://scenes/attacks/bone_hop.tscn
