@@ -1,3 +1,4 @@
+NinePatchRect
 RichTextLabel
 Label
 Node2D
@@ -12,4 +13,3 @@ VBoxContainer
 AnimationPlayer
 ColorRect
 HBoxContainer
-GridContainer
