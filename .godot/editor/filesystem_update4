@@ -1,9 +1,11 @@
-res://scenes/attacks/attackPieces/bone.tscn
-res://scenes/attacks/attackPieces/scripts/bone.gd
+res://scenes/attacks/bone_hop.tscn
+res://scenes/attacks/attackPieces/bones/bone.tscn
+res://scenes/attacks/bones/bone_gap.tscn
+res://scenes/attacks/scripts/bone.gd
+res://scenes/attacks/bones/bone.tscn
 res://scenes/fight.tscn
 res://scenes/soul.tscn
 res://scenes/ui/UtOption.tscn
 res://scenes/ui/UtButtonOption.tscn
 res://scenes/ui/optionContainer.tscn
 res://scenes/ui/optionHandler.tscn
-res://scenes/attacks/bone_hop.tscn

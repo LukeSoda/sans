@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://v026mw8m4y1l"]
+
+[ext_resource type="PackedScene" uid="uid://dwe1g1ccs3nmu" path="res://scenes/attacks/bones/bone.tscn" id="1_8cqfa"]
+[ext_resource type="PackedScene" uid="uid://b3ad44ttumb65" path="res://scenes/soul.tscn" id="2_ca2q0"]
+
+[node name="bone_gap" type="Node2D"]
+
+[node name="top_bone" parent="." instance=ExtResource("1_8cqfa")]
+
+[node name="bottom_bone" parent="." instance=ExtResource("1_8cqfa")]
+offset_left = 1.0
+offset_top = -29.0
+offset_right = 13.0
+offset_bottom = -17.0
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_ca2q0")]
+position = Vector2(29, -8)

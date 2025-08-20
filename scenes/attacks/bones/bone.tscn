@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwe1g1ccs3nmu"]
+
+[ext_resource type="Script" uid="uid://b7yw31o7xwrix" path="res://scenes/attacks/scripts/bone.gd" id="1_chy2a"]
+[ext_resource type="Texture2D" uid="uid://cr1n5k8nsnk6a" path="res://assets/objects/boneMap.png" id="2_i8txs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_keax5"]
+size = Vector2(6, 8)
+
+[node name="Bone" type="Control"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_right = 9.0
+offset_bottom = 14.0
+script = ExtResource("1_chy2a")
+length = 14.0
+gap = null
+maxHeight = null
+
+[node name="texture" type="NinePatchRect" parent="."]
+offset_left = -1.0
+offset_right = 9.0
+offset_bottom = 14.0
+texture = ExtResource("2_i8txs")
+region_rect = Rect2(0, 0, 10, 14)
+patch_margin_left = 5
+patch_margin_top = 7
+patch_margin_right = 5
+patch_margin_bottom = 7
+
+[node name="collision" type="StaticBody2D" parent="."]
+position = Vector2(-1, 0)
+
+[node name="shape" type="CollisionShape2D" parent="collision"]
+position = Vector2(5, 7)
+shape = SubResource("RectangleShape2D_keax5")
+debug_color = Color(0.890196, 0, 0, 0.447059)

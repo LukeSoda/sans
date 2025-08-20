@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b3ad44ttumb65"]
 
-[ext_resource type="Texture2D" uid="uid://tndh56tw3ly6" path="res://assets/objects/spr_heart_0.png" id="1_ivn1w"]
+[ext_resource type="Texture2D" uid="uid://1wubwsottbpl" path="res://assets/objects/spr_heart_0.png" id="1_ivn1w"]
 [ext_resource type="Script" uid="uid://b6x58dj8cs" path="res://scenes/soul.gd" id="1_jnmxf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jnmxf"]
